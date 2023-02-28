@@ -1,3 +1,46 @@
+body {
+  background-color: aliceblue;
+}
+
 .App {
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.btn-container button {
+  background-color: rgb(209, 209, 209);
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px
+}
+
+button:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+#table {
+  width: 100%;
+  padding: 20px;
   text-align: center;
+}
+
+#table thead{
+  background-color: blanchedalmond;
+  padding: 20px;
+}
+
+#table tbody{
+  background-color: beige;
+}
+
+table, th, td {
+  border: 1px solid;
 }

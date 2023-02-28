@@ -67,7 +67,7 @@ function App() {
 
   const handleRemoveContact = (id) => {
     //filter by not equal id
-  const contactFiltered = contacts.filter((element) => element.id !== id);
+    const contactFiltered = contacts.filter((element) => element.id !== id);
 
     setContacts(contactFiltered);
   };
@@ -75,12 +75,14 @@ function App() {
   return (
     <div className="App">
       <h2>Iron Contacts</h2>
-      <button onClick={handleAddRandom}>Add Random Contact Btn</button>
-      <button onClick={handleSortByName}>Sort By Name</button>
-      <button onClick={handleSortByPopularity}>
-        Sort by Popularity Contacts
-      </button>
-      <table>
+      <div className="btn-container">
+        <button onClick={handleAddRandom}>Add Random Contact Btn</button>
+        <button onClick={handleSortByName}>Sort By Name</button>
+        <button onClick={handleSortByPopularity}>
+          Sort by Popularity Contacts
+        </button>
+      </div>
+      <table id="table">
         <thead>
           <tr>
             <th>Picture</th>
@@ -95,18 +97,18 @@ function App() {
           {contacts.map((contact) => {
             return (
               <tr key={contact.id}>
-                <th>
+                <td>
                   <img width={"100px"} src={contact.pictureUrl} alt="" />
-                </th>
-                <th>{contact.name}</th>
-                <th>{contact.popularity.toFixed(2)}</th>
-                <th>{contact.wonOscar ? "🏆" : null}</th>
-                <th>{contact.wonEmmy ? "🏆" : null}</th>
-                <th>
+                </td>
+                <td>{contact.name}</td>
+                <td>{contact.popularity.toFixed(2)}</td>
+                <td>{contact.wonOscar ? "🏆" : null}</td>
+                <td>{contact.wonEmmy ? "🏆" : null}</td>
+                <td>
                   <button onClick={() => handleRemoveContact(contact.id)}>
                     Remove
                   </button>
-                </th>
+                </td>
               </tr>
             );
           })}
